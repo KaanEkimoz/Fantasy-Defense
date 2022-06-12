@@ -83,4 +83,17 @@ public class Grid
             return 0;
         }
     }
+    public int GetValue(Vector3 worldPosition)
+    {
+        int x, z;
+        GetXY(worldPosition, out x,out z);
+        if (x >= 0 && z >= 0 && x < width && z < height)
+        {
+            return gridArray[x, z];
+        }
+        else
+        {
+            return 0;
+        }
+    }
 }
