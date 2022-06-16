@@ -15,6 +15,7 @@ public class Grid
     private Color debugColor = Color.black;
     private TextAnchor anchorLoc = TextAnchor.MiddleCenter;
     private TextMesh[,] debugTextArray;
+    private bool debugOn;
     
     public Grid(int width, int height,float cellSize,Vector3 originPosition, bool debugOn)
     {
@@ -22,6 +23,7 @@ public class Grid
         this.height = height;
         this.cellSize = cellSize;
         this.originPosition = originPosition;
+        this.debugOn = debugOn;
 
 
         if (debugOn)
@@ -40,13 +42,22 @@ public class Grid
         {
             for (int z = 0; z < gridArray.GetLength(1); z++)
             {
-                debugTextArray[x,z] = UtilsClass.CreateWorldText(gridArray[x, z].ToString(), GameObject.Find("Grid").transform, GetWorldPosition(x , z) + new Vector3(cellSize /2,0, cellSize /2), fontSize ,debugColor,anchorLoc);
+                if (debugOn)
+                {
+                    debugTextArray[x,z] = UtilsClass.CreateWorldText(gridArray[x, z].ToString(), GameObject.Find("Grid").transform, GetWorldPosition(x , z) + new Vector3(cellSize /2,0, cellSize /2), fontSize ,debugColor,anchorLoc);
                 
-                Debug.DrawLine(GetWorldPosition(x,z),GetWorldPosition(x,z+1),debugColor,3600f);
-                Debug.DrawLine(GetWorldPosition(x,z),GetWorldPosition(x+1,z),debugColor,3600f);
+                    Debug.DrawLine(GetWorldPosition(x,z),GetWorldPosition(x,z+1),debugColor,3600f);
+                    Debug.DrawLine(GetWorldPosition(x,z),GetWorldPosition(x+1,z),debugColor,3600f);
+                }
+                
             }
-            Debug.DrawLine(GetWorldPosition(0,height),GetWorldPosition(width,height));
-            Debug.DrawLine(GetWorldPosition(width,0),GetWorldPosition(width,height));
+
+            if (debugOn)
+            {
+                Debug.DrawLine(GetWorldPosition(0,height),GetWorldPosition(width,height));
+                Debug.DrawLine(GetWorldPosition(width,0),GetWorldPosition(width,height));
+            }
+            
         }
     }
     
