@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b95fc4471353d49ae65bfe8f626f7d, type: 3}
   m_Name: KingdomInfantry
   m_EditorClassIdentifier: 
-  name: New Pawn
+  name: KingdomInfantry
+  pawnCost: 50
+  spawnSide: 1
   health: 100
   range: 1
-  damage: 25
   timeBetweenAttacks: 3
-  missile: {fileID: 0}
   visual: {fileID: 6332944790779053189, guid: cdbf069bbc13f2445a668007b60dedd9, type: 3}

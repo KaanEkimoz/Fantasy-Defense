@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b95fc4471353d49ae65bfe8f626f7d, type: 3}
+  m_Name: KingdomArcher
+  m_EditorClassIdentifier: 
+  name: KingdomArcher
+  pawnCost: 60
+  spawnSide: 1
+  health: 70
+  range: 5
+  timeBetweenAttacks: 4
+  visual: {fileID: 4163461934077662863, guid: 760e399e977189b429af8a6dd0118dad, type: 3}

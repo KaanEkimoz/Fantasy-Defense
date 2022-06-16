@@ -16,15 +16,18 @@ public class Grid
     private TextAnchor anchorLoc = TextAnchor.MiddleCenter;
     private TextMesh[,] debugTextArray;
     
-    public Grid(int width, int height,float cellSize,Vector3 originPosition)
+    public Grid(int width, int height,float cellSize,Vector3 originPosition, bool debugOn)
     {
         this.width = width;
         this.height = height;
         this.cellSize = cellSize;
         this.originPosition = originPosition;
-        
-        
-        debugTextArray = new TextMesh[width, height];
+
+
+        if (debugOn)
+        {
+            debugTextArray = new TextMesh[width, height];
+        }
         CreateGrid();
     }
     
