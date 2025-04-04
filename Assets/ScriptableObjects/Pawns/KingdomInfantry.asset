@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: KingdomInfantry
   pawnCost: 50
-  spawnSide: 1
-  health: 100
+  moveSpeed: 0.5
+  pawnSide: 1
+  maxHealth: 30
+  damagePerAttack: 10
   range: 1
   timeBetweenAttacks: 3
-  visual: {fileID: 6332944790779053189, guid: cdbf069bbc13f2445a668007b60dedd9, type: 3}

@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Friendly
-  - Hostile
+  tags: []
   layers:
   - Default
   - TransparentFX

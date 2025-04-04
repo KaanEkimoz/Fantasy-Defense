@@ -5,25 +5,23 @@ namespace ScriptableObjects
     [CreateAssetMenu(fileName = "New Pawn Type", menuName = "Pawn Type")]
     public class PawnType : ScriptableObject
     {
-        [Header("Name"),Space]
+        [Header("General Information"),Space]
         public new string name = "New Pawn";
         public int pawnCost;
-        public float walkingSpeed = 10f;
-        public SpawnSide spawnSide = SpawnSide.Kingdom;
+        public float moveSpeed = 10f;
+        public PawnSide pawnSide = PawnSide.Left;
         
 
         [Header("Combat"), Space] 
-        public int health;
+        public int maxHealth = 30;
+        public int damagePerAttack = 10;
         public int range = 5;
         public float timeBetweenAttacks = 2.0f;
-
-        [Header("Visual"),Space]
-        public GameObject visual;
         
-        public enum SpawnSide
+        public enum PawnSide
         {
-            Enemy, //Right
-            Kingdom //Left
+            Right, //Enemy Side
+            Left //Player Side
         }
     }
 }

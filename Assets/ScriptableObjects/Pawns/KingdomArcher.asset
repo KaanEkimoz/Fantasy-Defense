@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: KingdomArcher
   pawnCost: 60
-  spawnSide: 1
-  health: 70
+  moveSpeed: 0.5
+  pawnSide: 1
+  maxHealth: 30
+  damagePerAttack: 10
   range: 5
   timeBetweenAttacks: 4
-  visual: {fileID: 4163461934077662863, guid: 760e399e977189b429af8a6dd0118dad, type: 3}
