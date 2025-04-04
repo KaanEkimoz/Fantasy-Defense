@@ -6434,7 +6434,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2104873191}
-        m_TargetAssemblyTypeName: Pawn.SpawnPawn, Assembly-CSharp
+        m_TargetAssemblyTypeName: Pawn.SelectedPawnSpawner, Assembly-CSharp
         m_MethodName: MouseFollowPawn
         m_Mode: 3
         m_Arguments:
@@ -8022,8 +8022,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 539376801}
-  - component: {fileID: 539376803}
   - component: {fileID: 539376802}
+  - component: {fileID: 539376803}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -8092,9 +8092,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 539376800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 951b9bdcd79007448b3aacd27c8f66ae, type: 3}
+  m_Script: {fileID: 11500000, guid: eeeb70ccc37a69f449a859dfda3a0bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridWidth: 7
+  gridHeight: 12
+  debugOn: 1
 --- !u!4 &540242514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4816403295094518, guid: d03a051782e9ca244a00d021edb5cd29, type: 3}
@@ -8984,7 +8987,7 @@ PrefabInstance:
     - target: {fileID: 7407537545351063522, guid: 04542d7537bf05d4baaab2af640eff90, type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 4065434654708196855, guid: be60ed07d41249c45b526359a5af1b0d, type: 3}
+      objectReference: {fileID: 7207143280364850446, guid: 6bfff2cecdcdd1c4ca7b15701691e2e5, type: 3}
     - target: {fileID: 8735220835475986506, guid: 04542d7537bf05d4baaab2af640eff90, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -8995,7 +8998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8735220836306717267, guid: 04542d7537bf05d4baaab2af640eff90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.46
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8735220836306717267, guid: 04542d7537bf05d4baaab2af640eff90, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13968,13 +13971,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27059805, y: -0.6532815, z: 0.27059805, w: 0.6532815}
-  m_LocalPosition: {x: 11, y: 6.82, z: 5.16}
+  m_LocalRotation: {x: 0.3535534, y: -0.61237246, z: 0.3535534, w: 0.61237246}
+  m_LocalPosition: {x: 7.2, y: 6.82, z: 5.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 45, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: -90, z: 0}
 --- !u!1001 &966463362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21508,7 +21511,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2104873191}
-        m_TargetAssemblyTypeName: Pawn.SpawnPawn, Assembly-CSharp
+        m_TargetAssemblyTypeName: Pawn.SelectedPawnSpawner, Assembly-CSharp
         m_MethodName: MouseFollowPawn
         m_Mode: 3
         m_Arguments:
@@ -25741,6 +25744,10 @@ PrefabInstance:
     - target: {fileID: 1580374689252050625, guid: 2737040c6b8cb11498f0b01dbe21489d, type: 3}
       propertyPath: m_Name
       value: KingdomInfantry
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580374689252050625, guid: 2737040c6b8cb11498f0b01dbe21489d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30184,8 +30191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pawnsToSpawn:
-  - {fileID: 1480877159759166800, guid: 2737040c6b8cb11498f0b01dbe21489d, type: 3}
-  - {fileID: 4623995333695803095, guid: 0921255117fa3fa45bd3bedd8268e87d, type: 3}
+  - {fileID: 1580374689252050625, guid: 2737040c6b8cb11498f0b01dbe21489d, type: 3}
+  - {fileID: 746219866982899143, guid: 0921255117fa3fa45bd3bedd8268e87d, type: 3}
   selectionMarks:
   - {fileID: 1368625413}
   - {fileID: 1565568313}
@@ -31474,10 +31481,6 @@ PrefabInstance:
       value: Arrow
       objectReference: {fileID: 0}
     - target: {fileID: 7210524636301158072, guid: 6bfff2cecdcdd1c4ca7b15701691e2e5, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7210524636301158072, guid: 6bfff2cecdcdd1c4ca7b15701691e2e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.832765
       objectReference: {fileID: 0}
@@ -31642,9 +31645,9 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 539376801}
   - {fileID: 828090830}
-  - {fileID: 370611845}
-  - {fileID: 702620341}
   - {fileID: 2104873192}
   - {fileID: 1574293387}
   - {fileID: 1042950976}
   - {fileID: 102599958}
+  - {fileID: 370611845}
+  - {fileID: 702620341}

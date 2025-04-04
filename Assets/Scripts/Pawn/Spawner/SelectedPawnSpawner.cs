@@ -42,6 +42,8 @@ namespace Pawn
                     Destroy(visual);
                     Destroy(activeMark);
                     ResetSelectionMarks();
+
+                    //TO DO: Spawn visual thing here
                     Instantiate (pawnsToSpawn[pawnIndex], RoundHitPoint(_hit.point), Quaternion.identity);// instatiate a prefab on the position where the ray hits the floor.
                     PlaygroundGrid.Board.SetValue(RoundHitPoint(_hit.point),1);
                     Debug.Log (_hit.point);// debugs the vector3 of the position where I clicked
@@ -49,26 +51,24 @@ namespace Pawn
             }  
         }
 
-
         private Vector3 RoundHitPoint(Vector3 hitPoint)
         {
             return new Vector3(Mathf.Round(hitPoint.x), 0, Mathf.Round(hitPoint.z));
         }
         public void MouseFollowPawn(int pawnIndex)
         {
-            if (GoldControl(pawnsToSpawn[pawnIndex]))
+            if (ControlGold(pawnsToSpawn[pawnIndex]))
             {
                 currentPawnIndex = pawnIndex;
                 selectionMarks[pawnIndex].SetActive(true);
-                //visual = Instantiate(pawnsToSpawn[pawnIndex].GetComponent<Pawn>().pawn.visual,transform.position,Quaternion.identity) as GameObject;
+                visual = Instantiate(pawnsToSpawn[pawnIndex],transform.position,Quaternion.identity) as GameObject;
                 activeMark = Instantiate(selectionMark, transform.position, Quaternion.identity) as GameObject;
                 activeMark.transform.Rotate(Vector3.right,-90f);
             }
             else
                 ResetSelectionMarks();
         }
-
-        private bool GoldControl(GameObject pawnToSpawn)
+        private bool ControlGold(GameObject pawnToSpawn)
         {
             if (GoldController.Instance.Gold >= pawnToSpawn.GetComponent<Pawn>().pawn.pawnCost)
             {
@@ -81,7 +81,6 @@ namespace Pawn
             }
             
         }
-
         private void ResetSelectionMarks()
         {
             foreach (var selectionMark in selectionMarks)

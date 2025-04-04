@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pawn: {fileID: 11400000, guid: c7ca5207102e2ad47afcfce4db7ae2dc, type: 2}
   firePoint: {fileID: 7407537545958665158}
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 7207143280364850446, guid: 6bfff2cecdcdd1c4ca7b15701691e2e5, type: 3}
 --- !u!65 &8735220836306716074
 BoxCollider:
   m_ObjectHideFlags: 0
